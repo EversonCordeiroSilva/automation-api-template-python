@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Skipped tests",
+    "matchedStatuses": ["skipped"]
+  },
+  {
+    "name": "Authentication Errors",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*401|403.*"
+  },
+  {
+    "name": "Contract Errors",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*400|422.*"
+  },
+  {
+    "name": "Server Errors",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*500.*"
+  },
+  {
+    "name": "Timeout / Network Issues",
+    "matchedStatuses": ["broken"],
+    "messageRegex": ".*(timeout|connection|network).*"
+  },
+  {
+    "name": "Assertion Failures",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*AssertionError.*"
+  }
+]

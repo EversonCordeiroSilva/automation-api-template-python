@@ -1,0 +1,2 @@
+class ServiceEnvironment:
+    BASE_URL = "https://api.escuelajs.co"

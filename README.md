@@ -162,10 +162,10 @@ These folders represent **future scalability**, not current needs:
 
 ## ✅ What This Project Demonstrates
 
-✔ Clean BDD modeling
-✔ Proper separation of responsibilities
-✔ No overuse of helpers or “magic” layers
-✔ Conscious architectural trade-offs
+✔ Clean BDD modeling <br>
+✔ Proper separation of responsibilities <br>
+✔ No overuse of helpers or “magic” layers <br>
+✔ Conscious architectural trade-offs <br>
 ✔ Production-oriented mindset
 
 This is **not** a copy-paste framework.

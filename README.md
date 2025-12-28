@@ -1,8 +1,6 @@
----
-
 # 🧪 Python API Test Automation – BDD Showcase
 
-This repository showcases a **professional and intentional Python test automation framework**, designed and implemented by a **Senior QA Engineer** to demonstrate:
+This repository showcases a **professional and intentional Python test automation framework**, designed and implemented by a **QA Engineer** to demonstrate:
 
 * clean architecture
 * BDD best practices

@@ -154,7 +154,7 @@ These folders represent **future scalability**, not current needs:
 * `config/` → environment and configuration management
 * `core/` → framework-level abstractions (HTTP client, retries, logging)
 * `pages/` → UI automation (Page Object Model)
-* `utils/` → specific utilities *only if real reuse emerges*
+* `support/` → specific utilities *only if real reuse emerges*
 
 > No abstractions were introduced without a concrete need.
 

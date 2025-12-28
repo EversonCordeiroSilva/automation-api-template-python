@@ -26,7 +26,7 @@ Key principles:
 
 ## 🧰 Tech Stack
 
-* **Python 3.14+**
+* **Python 3.13+**
 * **Behave (Cucumber for Python)** – BDD
 * **Requests** – API interaction
 * **AssertPy** – expressive assertions
@@ -56,7 +56,7 @@ automation-project/
 │   ├── config/                 # Reserved (documented, intentionally unused)
 │   ├── core/                   # Reserved (documented, intentionally unused)
 │   ├── pages/                  # Reserved (UI automation placeholder)
-│   └── utils/                  # Reserved (intentional, no generic helpers)
+│   └── support/                  # Reserved (intentional, no generic helpers)
 │
 ├── reports/
 ├── script.py                   # Test runner (Behave entry point)

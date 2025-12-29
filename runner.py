@@ -4,10 +4,7 @@ from src.config.allure_config import install_allure_if_needed
 
 def run_tests():
     print("Running Behave tests...")
-    subprocess.run(
-        [sys.executable, "-m", "behave"],
-        check=True
-    )
+    subprocess.run([sys.executable, "-m", "behave"])
 
 def generate_allure_html():
     allure_results = "resources/reports/allure-results"

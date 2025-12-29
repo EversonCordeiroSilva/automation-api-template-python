@@ -1,2 +1,2 @@
 class ServiceEnvironment:
-    BASE_URL = "https://api.escuelajs.co"
+    BASE_URL = "https://www.advantageonlineshopping.com"

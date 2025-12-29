@@ -13,16 +13,18 @@ Feature: User authentication via Fake Store API
   @smoke @positive @allure.label.story:Login_Sucess @allure.severity:critical
   Scenario: Successful login with valid credentials
     When I authenticate with valid credentials
-    Then the API should return status code 201
+    Then the API should return status code 200
     And an authentication token should be returned
 
-  @negative @allure.label.story:Login_Failed @allure.severity:minor
+  @negative @allure.label.story:Login_Failed @allure.severity:normal
   Scenario Outline: Login failures due to invalid credentials
-    When I authenticate with email "<email>" and password "<password>"
+    When I authenticate with email "<email>" and user "<user>" and password "<password>"
     Then the API should return status code <status_code>
     Examples:
-      | email                   | password      | status_code |
-      | john@mail.com           | wrong_pass    | 401         |
-      | invalid_user@mail.com   | changeme      | 401         |
-      | <empty>                 | changeme      | 401         |
-      | john@mail.com           | <empty>       | 401         |
+      | email                                   | user           | password      | status_code |
+      | qa.automation.aos01@gmail.com           | qa_auto_user01 | wrong_pass    | 403         |
+      | qa.automation.aos01@gmail.com           | qa_wrong_user  | Test@1234     | 403         |
+      | invalid_user@mail.com                   | qa_auto_user01 | Test@1234     | 403         |
+      | <empty>                                 | qa_auto_user01 | changeme      | 403         |
+      | qa.automation.aos01@gmail.com           | <empty>        | Test@1234     | 403         |
+      | qa.automation.aos01@gmail.com           | qa_auto_user01 | <empty>       | 403         |

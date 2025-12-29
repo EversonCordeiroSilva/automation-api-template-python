@@ -11,11 +11,12 @@ def step_login_valid(context):
     context.response = context.auth_service.login_valid_user()
 
 
-@when('I authenticate with email "{email}" and password "{password}"')
-def step_login_with_parameters(context, email, password):
+@when('I authenticate with email "{email}" and user "{user}" and password "{password}"')
+def step_login_with_parameters(context, email, user, password):
     email = context.normalize(email)
+    user = context.normalize(user)
     password = context.normalize(password)
-    context.response = context.auth_service.login(email, password)
+    context.response = context.auth_service.login(email, user, password)
 
 
 @then("the API should return status code {status_code:d}")
@@ -27,9 +28,16 @@ def step_validate_status_code(context, status_code):
 def step_validate_token(context):
     body = context.response.json()
 
-    assert_that(body).contains_key("access_token")
-    assert_that(body["access_token"]).is_not_empty()
-
-    assert_that(body).contains_key("refresh_token")
-    assert_that(body["refresh_token"]).is_not_empty()
+    assert_that(body).contains_key("statusMessage")
+    assert_that(body["statusMessage"]).is_not_empty()
+    assert_that(body["statusMessage"]).contains_key("success")
+    assert_that(body["statusMessage"]["success"]).is_instance_of(bool)
+    assert_that(body["statusMessage"]).contains_key("userId")
+    assert_that(body["statusMessage"]["userId"]).is_instance_of(int)
+    assert_that(body["statusMessage"]).contains_key("reason")
+    assert_that(body["statusMessage"]["reason"]).is_not_empty()
+    assert_that(body["statusMessage"]).contains_key("token")
+    assert_that(body["statusMessage"]["token"]).is_not_empty()
+    assert_that(body["statusMessage"]).contains_key("sessionId")
+    assert_that(body["statusMessage"]["sessionId"]).is_not_empty()
 
